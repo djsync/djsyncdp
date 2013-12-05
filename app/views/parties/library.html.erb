@@ -4,20 +4,25 @@
       <li>DJ<span>SYNC</span></li>
       <li><a href="/parties/<%=@party.id%>/">Setlist</a></li>
       <li><a href="/parties/<%=@party.id%>/library">Library</a></li>
-      <li><a href="">Party</a>
+      <!--<li><a href="">Party</a>
         <div>
           <ul>
             <li><a href="">Join Party</a></li>
             <li><a href="">Create Party</a></li>
           </ul>
         </div>
-      </li>
+      </li>-->
     </ul>
   </nav>
 </div>
 
 <div id="contentdiv">
-  <p id="notice"><%= notice %></p>
+  <% if flash[:notice] %>
+      <div id="notice">
+        <%= flash[:notice] %>
+      </div>
+  <% end %>
+  <br/>
   <div class="party_header">
       <h1><%= @party.party_name %>  <span class="button">View Party Details</span></h1>
       <div class="party_description">
@@ -32,7 +37,7 @@
 
 
 
-  <div class="playlist">
+  <div class="library">
     <h2><%= @party.party_name %> Library:</h2>
 
       <% if @party.songs.empty? %>

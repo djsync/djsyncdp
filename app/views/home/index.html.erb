@@ -28,6 +28,21 @@
         var windowHeight = $(window).height();
         var windowWidth = $(window).width();
 
+        var navHeight = $("#nav").height();
+        var contentHeight = $("#content").height()
+        var windowHeight = $(window).height()
+        var footerHeight = $("#footer").height()
+
+        if((navHeight+contentHeight-fooheight) <= windowHeight){
+            $("#footer").addClass("stickybar");
+        }else{
+            $("#footer").removeClass("stickybar");
+
+        }
+
+
+
+
         $("#join_btn form").hide();
 
         if(windowHeight>600){
@@ -65,6 +80,10 @@
 
 <style type="text/css">
 
+    #body{
+        background: #fff;
+    }
+
     #nav_container{
         display: none;
     }
@@ -90,6 +109,17 @@
         color: #fff;
         text-decoration: none;
         padding: 4px 0px 3px 0px;
+        -moz-transition:.3s;
+        -webkit-transition:.3s;
+        -o-transition:.3s;
+        transition:.3s;
     }
+
+    #home_container a:hover{
+    text-decoration: none;
+    background: #ddd;
+    color: #0066cf;
+
+}
 
 </style>

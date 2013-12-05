@@ -30,9 +30,11 @@ $(function(){
 
 		$(this).delay(delayValue).animate({
 			"opacity": 1
-		}, 100);//end animate
-		delayValue += 100;
+		}, 10);//end animate
+		delayValue += 10;
 	})//end playlist for loop
+
+
 
 	$(".party_header h1 span").click(function(){
 		$(".party_description").slideToggle();
